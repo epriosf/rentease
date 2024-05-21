@@ -1,6 +1,148 @@
-* {
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflow that might cause scrolling */
+}
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.background {
+    flex: 1;
+    background: url('./../../images/login_bg.svg') no-repeat;
+    background-size: cover; /* Cover the whole background area */
+    background-position: center;
+}
+.background .logo-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.background .logo-down-container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.background .logo-down-container img{
+    max-width: 75%;
+}
+.background .logo-container .img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.background span {
+    color: white;
+    font-family: 'Broadway', sans-serif;
+}
+.background .logo-r{
+    font-size: 300px;
+    width: 230px;
+
+}
+.background .logo-name{
+    font-size: 100px;
+}
+.background .slogan {
+    color: white;
+    text-align: start;
+}
+.form-container {
+    flex: 1;
+}
+.welcome-text {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    color: #404660;
+   
+}
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 90px;
+    margin: 0 auto;
+  }
+ .container-login {
+    width: 70%;
+    margin: 0 auto;
+ }
+.form-login{
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+}
+
+.form-login label{
+    display: block;
+    margin-bottom: 5px;
+    color: #404660;
+  }
+  .form-login input{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    border: 3px solid #96C6DA;
+    border-radius: 15px;
+    font-size: 35px;
+    padding: 15px;
+  }
+  .form-login input::placeholder {
+    color: #888888; /* Change to your desired color */
+}
+  .form-login button{
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #7AA3DF;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #7AA3DF;
+    color: white;
+    font-size: 35px;
+  }
+  .form-login button:hover{
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #404660;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #404660;
+    color: white;
+    font-size: 35px;
+  }
+  .form-login span {
+    display: block;
+   text-align: end;
+   color: #6F6C6C;
+   font-size: 25px;
+   font-style: italic;
+
+  }
+  a {
+    color: #96C6DA;
+  }
+  a:hover{
+    color: #6F6C6C;
+  }
+  .sign-up {
+    margin-top: 20px;
+    text-align: center;
+  }
