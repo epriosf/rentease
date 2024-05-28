@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="logo-container">
+                <img src="./../../images/logo-rentease.svg" alt="logo" />
+            </div>
+            <div class="logo-down-container">
+                <img src="./../../images/house-search.svg" alt="logo-image" />
+            </div>
+           
+        </div>
+        <div class="form-container">
+            <div class="container-login">
+                <div class="welcome-text">
+                    <div class="roboto-bold">
+                        WELCOME TO OUR WEBSITE
+                    </div>
+    </div>
+    <form class="form-register" id="register">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="lastname">Apellido:</label><br>
+        <input type="text" id="lastname" name="lastname" required><br>
+        <label for="username">Nombre de usuario:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="birthdate">Fecha de nacimiento:</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br>
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Registrar">
+    </form>
+    <div id="message"></div>
+    <script src="register.js"></script>
+</body>
+</html>
