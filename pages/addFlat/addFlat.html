@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" href="./../../index.css">
+    <link rel="stylesheet" href="./addFlat.css">
+</head>
+<body>
+    <form class="form-login" id="addFlat">
+        <div class="roboto-bold">
+            REGISTER FLAT
+        </div>
+        <div class="direction-container">
+            <input type="hidden" id="flatId">
+            <div class="direction-item">
+                <label>Name</label>
+                <input type="text" id="flatName" name="flatName" placeholder="Enter a flat name">
+            </div>
+            <div class="direction-item">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter a city">
+            </div>
+        </div>
+       
+        <div class="direction-container">
+            <div class="direction-item">
+                <label>Street Name</label>
+                <input type="text" id="streetName" name="streetName" placeholder="Enter a street name">
+            </div>
+            <div class="direction-item">
+                <label for="city">Street Number</label>
+                <input type="text" id="streetNumber" name="streetNumber" placeholder="Enter a street Number">
+            </div>
+            
+        </div>
+        <div class="direction-container">
+            <div class="direction-item">
+                <label for="areaSize">Area Size</label>
+                <input type="text" id="areaSize" name="areaSize" placeholder="Enter an Area Size">
+            </div>
+       <div class="direction-item">
+        <label for="yearBuilt">Year Built</label>
+            <select name="select" id="yearBuilt">
+                <option value="2024" selected>2024</option>
+                <option value="2023" >2023</option>
+                <option value="2022">2022</option>
+              </select>
+        </div>
+       </div>
+       
+       <div class="direction-container">
+        <div class="direction-item">
+            <label for="hasAc">Has AC</label>
+            <div class="favourite-container">
+                <div class="fav-option">
+                    <input type="radio" id="isFav" name="radioHasAc" value="yes" checked/>
+                    <div for="isFav" class="label-fav">Yes</div>
+                </div>
+                <div class="fav-option">
+                    <input type="radio" id="isNotFav" name="radioHasAc" value="no"/>
+                    <div for="isNotFav" class="label-fav">No</div>
+                </div>
+            </div>
+        </div>
+        <div class="direction-item">
+            <label for="isFav">Is Favourite</label>
+            <div class="favourite-container">
+                <div class="fav-option">
+                    <input type="radio" id="isFav" name="radioIsFav" value="yes" checked/>
+                    <div for="isFav" class="label-fav">Yes</div>
+                </div>
+                <div class="fav-option">
+                    <input type="radio" id="isNotFav" name="radioIsFav" value="no"/>
+                    <div for="isNotFav" class="label-fav">No</div>
+                </div>
+            </div>
+        </div>
+
+       </div>
+
+        <label for="yearBuilt">Rent Price</label>
+        <input type="number" id="rentPrice" name="rentPrice" placeholder="rentPrice" >
+        <label for="yearBuilt">Date Available</label>
+       <!-- <input type="text" id="dateAvailable" name="dateAvailable" placeholder="dateAvailable" >-->
+       <input type="text" id="dateAvailable" name="daterange" value="" placeholder="Select date range"/>
+       
+        <label for="imageUrl">Image</label>
+        <input type="file" id="imageUrl" name="imageUrl" placeholder="imageUrl" >
+        <div>
+            <img id="imagePreview" alt="Image Preview">
+        </div>
+      
+        <button type="submit" id="submit-button"><span id="submit-button-span">Register</span></button>
+        <button type="button" id="cancel-button" onclick="goToAllFlatsPage()">Cancel</button>
+    </form>
+</body>
+<script src="./../../shared/shared.js"></script>
+<script src="./addFlat.js"></script>
+</html>

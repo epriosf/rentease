@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./../../index.css">
+<link rel="stylesheet" href="./flats.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        background-color: #96C6DA;
+    }
+</style>
+<body>
+    <button class="button-add" onClick="handleAdd()">Add</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Street Name</th>
+                <th>Street Number</th>
+                <th>Area Size</th>
+                <th>Has AC</th>
+                <th>Year Built</th>
+                <th>Rent Price</th>
+                <th>Date Available</th>
+                <th>Favourite</th>
+                <th>Image</th>
+                <th>Operations</th>
+              </tr>
+        </thead>
+       
+       <tbody id="flats-container">
+       </tbody>
+      </table>
+</body>
+<script src="./../../shared/shared.js"></script>
+<script src="./flats.js">
+
+</script>
+</html>
