@@ -1,23 +1,9 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Hide any overflow that might cause scrolling */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*overflow: hidden;*/
 }
 .container {
     display: flex;
