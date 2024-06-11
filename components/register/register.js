@@ -20,6 +20,15 @@ document.getElementById('register').addEventListener('submit', function(event) {
         localStorage.setItem('users', JSON.stringify(users));
         document.getElementById('message').textContent = 'Usuario registrado exitosamente.';
     }
+
+    // Restablecer los campos del formulario
+    document.getElementById('name').value = '';
+    document.getElementById('lastname').value = '';
+    document.getElementById('username').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('birthdate').value = '';
+    document.getElementById('password').value = '';
+    
 });
 
 window.onload = function(){
