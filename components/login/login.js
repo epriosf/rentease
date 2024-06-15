@@ -165,3 +165,28 @@ form.addEventListener('submit', (event) => {
         alert('User not found');
     }
 });
+
+//anadido
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const users = JSON.parse(localStorage.getItem('users'));
+    const validUser = users.find(user => user.username === username && user.password === password)
+
+    if (validUser) {
+        // Si el usuario es válido, guarda su email, nombre, apellido, fecha de nacimiento y contraseña en localStorage
+        localStorage.setItem('email', validUser.email);
+        localStorage.setItem('name', validUser.name);
+        localStorage.setItem('lastname', validUser.lastname);
+        localStorage.setItem('birthdate', validUser.birthdate);
+        localStorage.setItem('password', validUser.password);
+        localStorage.setItem('username', username);
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = './../home/home.html';
+    } else {
+        alert('User not found');
+    }
+});

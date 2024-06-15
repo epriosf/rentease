@@ -7,16 +7,33 @@ document.getElementById('register').addEventListener('submit', function(event) {
     let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
     let birthdate = document.getElementById('birthdate').value;
-    console.log(birthdate);
     let password = document.getElementById('password').value;
-    console.log(password);
+
+    // Validaciones
+    let emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    let passwordRegex = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{6,}$/;
+
+    if (!emailRegex.test(email)) {
+        document.getElementById('message').textContent = 'El correo electrónico no es válido.';
+        return;
+    }
+
+    if (name.length < 2 || lastname.length < 2) {
+        document.getElementById('message').textContent = 'Los nombres deben tener al menos 2 caracteres.';
+        return;
+    }
+
+    if (!passwordRegex.test(password)) {
+        document.getElementById('message').textContent = 'La contraseña debe tener al menos 6 caracteres, incluyendo letras, números y al menos un caracter que no sea ni letra ni número.';
+        return;
+    }
 
     let exists = users.some(user => user.username === username || user.email === email);
 
     if (exists) {
         document.getElementById('message').textContent = 'El usuario o correo electrónico ya existen.';
     } else {
-        users.push({ name, lastname, username, email, password });
+        users.push({ name, lastname, username, email, birthdate, password });
         localStorage.setItem('users', JSON.stringify(users));
         document.getElementById('message').textContent = 'Usuario registrado exitosamente.';
     }
@@ -42,7 +59,7 @@ window.onload = function(){
     var minDate = minYear + '-' + mm + '-' + dd;
 
     // Resta 70 años para la fecha máxima
-    var maxYear = yyyy - 70;
+    var maxYear = yyyy - 120;
     var maxDate = maxYear + '-' + mm + '-' + dd;
 
     // Establece las fechas mínima y máxima

@@ -1,3 +1,57 @@
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #7AA3DF;
+    border-radius: 40px;
+}
+
+#company-logo {
+    height: 70px;
+    width: 200px;
+}
+
+#greeting {
+    font-size: 30px;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+li a {
+    color: #333; /* Cambia esto al color que prefieras */
+    font-size: 16px; /* Cambia esto al tamaño que prefieras */
+    text-decoration: none; /* Esto quita el subrayado */
+    font-weight: bold; /* Esto hace que el texto esté en negrita */
+    margin-right: 20px; /* Esto añade espacio a la derecha de cada enlace */
+}
+
+li a:active {
+    color: seagreen; /* Cambia esto al color que prefieras */
+}
+
+li a:hover {
+    color: saddlebrown; /* Cambia esto al color que prefieras cuando el mouse se pasa sobre el enlace */
+}
+
+#logout {
+    background-color:whitesmoke;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold; 
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
