@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta na me="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Referencia al archivo CSS -->
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    Home
+    <header>
+        <div id="header-container">
+            <img src="./../../images/logo-rentease.svg" alt="Company Logo" id="company-logo">
+            <h1 id="greeting">Hello</h1>
+            <nav>
+                <ul>
+                    <li><a href="./../flats/flats.html">All Flats</a></li>
+                    <li><a href="./../addFlat/addFlat.html">New Flat</a></li>
+                    <li><a href="./../home/home.html">Home</a></li>
+                    <li><a href="./../login/login.html">Login</a></li>
+                    <li><a href="./../register/register.html">Register</a></li>
+                    <li><a href="./../profile/profile.html">Profile Update</a></li>
+                </ul>
+            </nav>
+            <button id="logout">Log out</button> <!-- CERRAR SESION -->
+        </div>
+    </header>
+    <div id="flats" class="grid"></div>
+    <!-- Referencia al archivo JavaScript -->
+    <script src="home.js"></script>
 </body>
 </html>
