@@ -1,3 +1,15 @@
+table {
+  margin: 0 auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #96C6DA;
+}
    .button-add {
     padding: 15px;
     width: 5%;
@@ -6,17 +18,12 @@
     color: white;
     border: 1px solid #655CC9;
     background-color: #655CC9;
-    margin: 10px;
+    margin-left: 5%;
    }
    .button-add:hover {
-    padding: 13px;
-    width: 5%;
-    border-radius: 15px;
     font-size: 16px;
-    color: white;
     border: 1px solid #404660;
     background-color: #404660;
-    margin: 10px;
    }
    
    #flats-container img{
