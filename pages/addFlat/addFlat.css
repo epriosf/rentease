@@ -1,9 +1,8 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .roboto-bold {
     font-family: "Roboto", sans-serif;
     font-weight: 700;

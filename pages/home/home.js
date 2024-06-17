@@ -168,29 +168,3 @@ flats.forEach(function(flat) {
 
     flatsContainer.appendChild(flatElement);
 });
-
-//HEADER
-window.addEventListener('DOMContentLoaded', (event) => {
-    const username = localStorage.getItem('username');
-    if (username) {
-        document.getElementById('greeting').textContent += ', ' + username;
-    }
-
-    document.getElementById('logout').addEventListener('click', function() {
-        localStorage.removeItem('username');
-        window.location.href = "./../login/login.html";
-    });
-});
-
-//CERRRAR SESION
-
-    document.getElementById('logout').addEventListener('click', function() {
-        // Remove multiple items from localStorage
-        localStorage.removeItem('username');
-        localStorage.removeItem('name');
-        localStorage.removeItem('lastname');
-        localStorage.removeItem('birthdate');
-        localStorage.removeItem('password');
-        localStorage.removeItem('email');
-        window.location.href = "./../login/login.html";
-    });
