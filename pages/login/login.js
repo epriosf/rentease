@@ -142,8 +142,24 @@ const flats = [
 ];
 
 const initialUsers = [
-    { username: 'paul', password: '1234' },
-    { username: 'diana', password: '12345' }
+    { 
+        email: 'paulrios@outlook.es', 
+        password: '1234A.', 
+        name:'paul', 
+        lastname:'rios', 
+        birthdate:'1994-04-16', 
+        username:'prios', 
+        isLoggedIn: false, 
+        timestamp: new Date()
+    },
+    { email: 'diana@gmail.com', 
+        password: '1234A.', 
+        name:'diana', 
+        lastname:'samaniego', 
+        birthdate:'1994-04-16', 
+        username:'dsamaniego', 
+        isLoggedIn: false, 
+        timestamp: new Date() }
 ];
 if (!localStorage.getItem('users')){
     localStorage.setItem('users', JSON.stringify(initialUsers));
@@ -152,40 +168,27 @@ const form = document.querySelector('.form-login');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!emailRegex.test(email)) {
+       alert("email no valido");
+        return;
+    }
+
     const password = document.getElementById('password').value.trim();
+    if (!passwordRegex.test(password)) {
+       alert('La contraseña debe tener al menos 6 caracteres, incluyendo letras, números y al menos un caracter que no sea ni letra ni número.');
+        return;
+    }
 
     const users = JSON.parse(localStorage.getItem('users'));
-    const validUser = users.find(user=> user.username === username && user.password === password)
+    const validUser = users.find(user=> user.email === email && user.password === password)
     if (validUser) {
         addListToLocalStorage('flats',JSON.stringify(flats));
+        validUser.timestamp = new Date().getTime();
+        validUser.isLoggedIn = true;
+        addItemToLocalStorage('userLogged', JSON.stringify(validUser));
         window.location.href = './../home/home.html';
      
-    } else {
-        alert('User not found');
-    }
-});
-
-//anadido
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    const users = JSON.parse(localStorage.getItem('users'));
-    const validUser = users.find(user => user.username === username && user.password === password)
-
-    if (validUser) {
-        // Si el usuario es válido, guarda su email, nombre, apellido, fecha de nacimiento y contraseña en localStorage
-        localStorage.setItem('email', validUser.email);
-        localStorage.setItem('name', validUser.name);
-        localStorage.setItem('lastname', validUser.lastname);
-        localStorage.setItem('birthdate', validUser.birthdate);
-        localStorage.setItem('password', validUser.password);
-        localStorage.setItem('username', username);
-        localStorage.setItem('isLoggedIn', 'true');
-        window.location.href = './../home/home.html';
     } else {
         alert('User not found');
     }

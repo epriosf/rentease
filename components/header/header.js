@@ -1,9 +1,9 @@
 function initializeHeader(){
     
-        const username = localStorage.getItem('username');
+        const userLogged = JSON.parse(localStorage.getItem('userLogged'));
     
-        if (username) {
-            document.getElementById('greeting').textContent += ', ' + username;
+        if (userLogged) {
+            document.getElementById('greeting').textContent += ', ' + userLogged.name;
         }
     
         const logoutButton = document.getElementById('logout');
