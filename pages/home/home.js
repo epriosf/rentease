@@ -12,7 +12,6 @@ let flats = [
         "date_available": "2024-07-24",
         "is_favourite": true,
         "image_url": "./../../images/department1.png"
-        
     },
     {
         "id": 2,

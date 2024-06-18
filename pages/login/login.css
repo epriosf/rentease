@@ -142,22 +142,15 @@ a:hover {
 
 @media (min-width: 1420px) and (max-width: 1549px) {
   .background .logo-container img {
-    max-width: 40%;
+    max-width: 90%;
   }
 
   .welcome-text {
-    margin-top: 0px;
-    margin-bottom: 50px;
+    margin-top: 25px;
   }
 
   .roboto-bold {
     font-size: 70px;
-  }
-  .background .logo-down-container {
-    position: relative;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
   }
 
   .background .logo-down-container img {
@@ -205,6 +198,7 @@ a:hover {
   .welcome-text {
     margin-top: 5px;
     margin-bottom: 5px;
+
   }
 
   .roboto-bold {
