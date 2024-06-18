@@ -15,5 +15,4 @@ function initializeHeader(){
         } else {
             console.error('Logout button not found');
         }
-    
 }
