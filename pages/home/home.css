@@ -1,0 +1,50 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;;
+}
+
+.flat {
+    border: none;
+    padding: 20px;
+}
+
+.flat img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.flat h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flat p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+.container-div {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.flat__text{
+    width: 50%;
+}
+
+.flat__date{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

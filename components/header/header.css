@@ -4,7 +4,9 @@
     align-items: center;
     padding: 20px;
     background-color: #7AA3DF;
-    border-radius: 40px;
+    border-radius: 10px;
+    width: 80%;
+    margin:0 auto;
 }
 
 #company-logo {
