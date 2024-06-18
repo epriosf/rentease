@@ -11,7 +11,8 @@ let flats = [
         "rent_price": 2600,
         "date_available": "2024-07-24",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department1.png"
+        
     },
     {
         "id": 2,
@@ -25,7 +26,7 @@ let flats = [
         "rent_price": 1929,
         "date_available": "2025-01-19",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department2.png"
     },
     {
         "id": 3,
@@ -39,7 +40,7 @@ let flats = [
         "rent_price": 2188,
         "date_available": "2025-01-19",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department3.png"
     },
     {
         "id": 4,
@@ -53,7 +54,7 @@ let flats = [
         "rent_price": 1651,
         "date_available": "2024-05-27",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department4.png"
     },
     {
         "id": 5,
@@ -67,7 +68,7 @@ let flats = [
         "rent_price": 4026,
         "date_available": "2025-04-13",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department5.png"
     },
     {
         "id": 6,
@@ -81,7 +82,7 @@ let flats = [
         "rent_price": 1172,
         "date_available": "2024-06-15",
         "is_favourite": true,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department6.png"
     },
     {
         "id": 7,
@@ -95,7 +96,7 @@ let flats = [
         "rent_price": 3403,
         "date_available": "2024-12-05",
         "is_favourite": false,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department7.png"
     },
     {
         "id": 8,
@@ -109,7 +110,7 @@ let flats = [
         "rent_price": 3568,
         "date_available": "2024-08-10",
         "is_favourite": false,
-        "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+        "image_url": "./../../images/department8.png"
     },
     {
         "id": 9,
@@ -123,7 +124,7 @@ let flats = [
         "rent_price": 2779,
         "date_available": "2024-11-19",
         "is_favourite": false,
-        "image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+        "image_url": "./../../images/department9.png"
     },
     {
         "id": 10,
@@ -137,7 +138,7 @@ let flats = [
         "rent_price": 3408,
         "date_available": "2024-09-05",
         "is_favourite": false,
-        "image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+        "image_url": "./../../images/department10.png"
     }
 ];
 
