@@ -271,3 +271,7 @@ a:hover {
     font-size: 25px;
   }
 }
+.swal2-popup {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}

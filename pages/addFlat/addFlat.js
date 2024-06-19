@@ -156,7 +156,7 @@ const clearAddFlatForm = () => {
 }
 
 const goToAllFlatsPage = () => {
-  window.location.href = 'file:///C:/Users/paulr/Escritorio/Proyecto%20Kruger/rentease/pages/flats/flats.html'
+  window.location.href = './../flats/flats.html'
 }
 const showAlert = (position, icon, title, text, showConfirmButton, timer) => {
   Swal.fire({
