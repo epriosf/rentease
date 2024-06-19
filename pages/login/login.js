@@ -142,26 +142,28 @@ const flats = [
 ];
 
 const initialUsers = [
-    { 
-        email: 'paulrios@outlook.es', 
-        password: '1234A.', 
-        name:'paul', 
-        lastname:'rios', 
-        birthdate:'1994-04-16', 
-        username:'prios', 
-        isLoggedIn: false, 
-        timestamp: new Date()
+    {
+        email: 'paulrios@outlook.es',
+        password: '1234A.',
+        name: 'paul',
+        lastname: 'rios',
+        birthdate: '1994-04-16',
+        username: 'prios',
+        isLoggedIn: false,
+        expiryTyme: new Date()
     },
-    { email: 'diana@gmail.com', 
-        password: '1234A.', 
-        name:'diana', 
-        lastname:'samaniego', 
-        birthdate:'1994-04-16', 
-        username:'dsamaniego', 
-        isLoggedIn: false, 
-        timestamp: new Date() }
+    {
+        email: 'diana@gmail.com',
+        password: '1234A.',
+        name: 'diana',
+        lastname: 'samaniego',
+        birthdate: '1994-04-16',
+        username: 'dsamaniego',
+        isLoggedIn: false,
+        expiryTyme: new Date()
+    }
 ];
-if (!localStorage.getItem('users')){
+if (!localStorage.getItem('users')) {
     localStorage.setItem('users', JSON.stringify(initialUsers));
 }
 const form = document.querySelector('.form-login');
@@ -169,27 +171,49 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const email = document.getElementById('email').value.trim();
-    if (!emailRegex.test(email)) {
-       alert("email no valido");
-        return;
-    }
-
     const password = document.getElementById('password').value.trim();
-    if (!passwordRegex.test(password)) {
-       alert('La contraseña debe tener al menos 6 caracteres, incluyendo letras, números y al menos un caracter que no sea ni letra ni número.');
+    if (!emailRegex.test(email) || !passwordRegex.test(password)) {
+        Toast.fire({
+            icon: "error",
+            title: "Invalid email or password",
+            text: "Please enter valid data"
+        });
         return;
     }
 
     const users = JSON.parse(localStorage.getItem('users'));
-    const validUser = users.find(user=> user.email === email && user.password === password)
+    const validUser = users.find(user => user.email === email && user.password === password)
     if (validUser) {
-        addListToLocalStorage('flats',JSON.stringify(flats));
-        validUser.timestamp = new Date().getTime();
+        addListToLocalStorage('flats', JSON.stringify(flats));
+        validUser.expiryTime = new Date(new Date().getTime() + 60 * 60*1000).toISOString();
         validUser.isLoggedIn = true;
         addItemToLocalStorage('userLogged', JSON.stringify(validUser));
-        window.location.href = './../home/home.html';
-     
+        Toast.fire({
+            icon: "success",
+            title: "Valid log",
+            text: "Welcome to Rentease"
+        });
+        setTimeout(() => {
+            window.location.href = './../home/home.html';
+          }, "3000");
+       
+
     } else {
-        alert('User not found');
+        Toast.fire({
+            icon: "error",
+            title: "User not found",
+            text: "Please try it later"
+        });
+    }
+});
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
     }
 });
