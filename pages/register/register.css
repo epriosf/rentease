@@ -147,3 +147,16 @@ body {
     margin-top: 20px;
     text-align: center;
   }
+
+  .password-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ajusta esto al ancho deseado */
+    height: 40px; /* Ajusta esto a la altura deseada */
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
