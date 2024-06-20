@@ -6,18 +6,31 @@ window.onload = function () {
     document.getElementById('submit-button-span').textContent  = 'Update';
     const flats = JSON.parse(getListFromLocalStorage('flats'));
     const flat = findItemByProperty(flats, 'id', flat_id);
+    const yearSelect = document.getElementById('yearBuilt');
+      const currentYear = new Date().getFullYear();
+      const startYear = 2000;
+      yearSelect.value = currentYear;
+
+      for (let year = currentYear; year >= startYear; year--) {
+          const option = document.createElement('option');
+          option.value = year;
+          option.textContent = year;
+          yearSelect.appendChild(option);
+      }
+
     if (flat) {
       document.getElementById('flatId').value = flat.id;
       document.getElementById('flatName').value = flat.name;
       document.getElementById('city').value = flat.city;
       document.getElementById('streetName').value = flat.street_name;
       document.getElementById('streetNumber').value = flat.street_number;
-      document.getElementById('areaSize').value = flat.area_size;
+      document.getElementById('areaSize').value = flat.area_size;      
       document.getElementById('yearBuilt').value = flat.year_built;
+
       document.getElementById('rentPrice').value = flat.rent_price;
       document.getElementById('dateAvailable').value = flat.date_available;
-      document.querySelector(`input[name="radioHasAc"][value="${flat.has_AC}"]`).checked = true;
-      document.querySelector(`input[name="radioIsFav"][value="${flat.is_favourite}"]`).checked = true;
+      document.querySelector(`input[name="radioHasAc"][value="${flat.has_AC ? 'yes' : 'no'}"]`).checked = true;
+      document.querySelector(`input[name="radioIsFav"][value="${flat.is_favourite ? 'yes': 'no'}"]`).checked = true;
 
       if (flat.image_url) {
         const imagePreview = document.getElementById('imagePreview');
@@ -59,8 +72,8 @@ document.getElementById('addFlat').addEventListener('submit', function (event) {
   let street_number = document.getElementById('streetNumber').value;
   let area_size = document.getElementById('areaSize').value;
   let year_built = document.getElementById('yearBuilt').value;
-  let has_AC = document.querySelector('input[name="radioHasAc"]:checked').value;
-  let is_favourite = document.querySelector('input[name="radioIsFav"]:checked').value;
+  let has_AC = document.querySelector('input[name="radioHasAc"]:checked').value === 'yes';
+  let is_favourite = document.querySelector('input[name="radioIsFav"]:checked').value ==='yes';
   let rent_price = document.getElementById('rentPrice').value;
   let date_available = document.getElementById('dateAvailable').value;
 

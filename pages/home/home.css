@@ -48,3 +48,18 @@
     justify-content: center;
     display: flex;
 }
+.container-div {
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: #ccc; /* Color del corazón cuando no está seleccionado */
+}
+
+.heart.selected {
+    color: red; /* Color del corazón cuando está seleccionado */
+}
