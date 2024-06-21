@@ -1,6 +1,6 @@
-const flats = [
+let flats = [
     {
-        "id": 'flat_1717721353888_232',
+        "id": '1',
         "name": "Flat 1",
         "city": "New York",
         "street_name": "3rd Blvd",
@@ -11,7 +11,7 @@ const flats = [
         "rent_price": 2600,
         "date_available": "2024-07-24",
         "is_favourite": true,
-        "image_url": "https://ibb.co/zfMcTG4"
+        "image_url": "./../../images/department1.png"
     },
     {
         "id": '2',
@@ -25,7 +25,7 @@ const flats = [
         "rent_price": 1929,
         "date_available": "2025-01-19",
         "is_favourite": true,
-        "image_url": "https://ibb.co/DwnbTyy"
+        "image_url": "./../../images/department2.png"
     },
     {
         "id": '3',
@@ -39,7 +39,7 @@ const flats = [
         "rent_price": 2188,
         "date_available": "2025-01-19",
         "is_favourite": true,
-        "image_url": "https://ibb.co/HrbwdPv"
+        "image_url": "./../../images/department3.png"
     },
     {
         "id": '4',
@@ -53,7 +53,7 @@ const flats = [
         "rent_price": 1651,
         "date_available": "2024-05-27",
         "is_favourite": true,
-        "image_url": "https://ibb.co/BVHzYnm"
+        "image_url": "./../../images/department4.png"
     },
     {
         "id": '5',
@@ -67,7 +67,7 @@ const flats = [
         "rent_price": 4026,
         "date_available": "2025-04-13",
         "is_favourite": true,
-        "image_url": "https://ibb.co/j3d7tG8"
+        "image_url": "./../../images/department5.png"
     },
     {
         "id": '6',
@@ -81,7 +81,7 @@ const flats = [
         "rent_price": 1172,
         "date_available": "2024-06-15",
         "is_favourite": true,
-        "image_url": "https://ibb.co/yfj3rJS"
+        "image_url": "./../../images/department6.png"
     },
     {
         "id": '7',
@@ -95,7 +95,7 @@ const flats = [
         "rent_price": 3403,
         "date_available": "2024-12-05",
         "is_favourite": false,
-        "image_url": "https://ibb.co/TkTGBV0"
+        "image_url": "./../../images/department7.png"
     },
     {
         "id": '8',
@@ -109,7 +109,7 @@ const flats = [
         "rent_price": 3568,
         "date_available": "2024-08-10",
         "is_favourite": false,
-        "image_url": "https://ibb.co/HHzRGd9"
+        "image_url": "./../../images/department8.png"
     },
     {
         "id": '9',
@@ -123,7 +123,7 @@ const flats = [
         "rent_price": 2779,
         "date_available": "2024-11-19",
         "is_favourite": false,
-        "image_url": "https://ibb.co/7jcYLpX"
+        "image_url": "./../../images/department9.png"
     },
     {
         "id": '10',
@@ -137,7 +137,7 @@ const flats = [
         "rent_price": 3408,
         "date_available": "2024-09-05",
         "is_favourite": false,
-        "image_url": "https://ibb.co/tZYsQpC"
+        "image_url": "./../../images/department10.png"
     }
 ];
 
@@ -195,7 +195,7 @@ form.addEventListener('submit', (event) => {
         });
         setTimeout(() => {
             window.location.href = './../home/home.html';
-          }, "3000");
+          }, "2000");
        
 
     } else {
@@ -210,7 +210,7 @@ const Toast = Swal.mixin({
     toast: true,
     position: 'top',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 2000,
     timerProgressBar: true,
     didOpen: (toast) => {
         toast.onmouseenter = Swal.stopTimer;
