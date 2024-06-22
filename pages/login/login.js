@@ -1,6 +1,6 @@
-const flats = [
+let flats = [
     {
-        "id": 1,
+        "id": '1',
         "name": "Flat 1",
         "city": "New York",
         "street_name": "3rd Blvd",
@@ -12,10 +12,9 @@ const flats = [
         "date_available": "2024-07-24",
         "is_favourite": true,
         "image_url": "./../../images/department1.png"
-        
     },
     {
-        "id": 2,
+        "id": '2',
         "name": "Flat 2",
         "city": "Houston",
         "street_name": "Broadway",
@@ -29,7 +28,7 @@ const flats = [
         "image_url": "./../../images/department2.png"
     },
     {
-        "id": 3,
+        "id": '3',
         "name": "Flat 3",
         "city": "Phoenix",
         "street_name": "Broadway",
@@ -43,7 +42,7 @@ const flats = [
         "image_url": "./../../images/department3.png"
     },
     {
-        "id": 4,
+        "id": '4',
         "name": "Flat 4",
         "city": "Houston",
         "street_name": "2nd Ave",
@@ -57,7 +56,7 @@ const flats = [
         "image_url": "./../../images/department4.png"
     },
     {
-        "id": 5,
+        "id": '5',
         "name": "Flat 5",
         "city": "New York",
         "street_name": "Main St",
@@ -71,7 +70,7 @@ const flats = [
         "image_url": "./../../images/department5.png"
     },
     {
-        "id": 6,
+        "id": '6',
         "name": "Flat 6",
         "city": "Houston",
         "street_name": "Market St",
@@ -85,7 +84,7 @@ const flats = [
         "image_url": "./../../images/department6.png"
     },
     {
-        "id": 7,
+        "id": '7',
         "name": "Flat 7",
         "city": "New York",
         "street_name": "2nd Ave",
@@ -99,7 +98,7 @@ const flats = [
         "image_url": "./../../images/department7.png"
     },
     {
-        "id": 8,
+        "id": '8',
         "name": "Flat 8",
         "city": "Los Angeles",
         "street_name": "2nd Ave",
@@ -113,7 +112,7 @@ const flats = [
         "image_url": "./../../images/department8.png"
     },
     {
-        "id": 9,
+        "id": '9',
         "name": "Flat 9",
         "city": "New York",
         "street_name": "Broadway",
@@ -127,7 +126,7 @@ const flats = [
         "image_url": "./../../images/department9.png"
     },
     {
-        "id": 10,
+        "id": '10',
         "name": "Flat 10",
         "city": "Los Angeles",
         "street_name": "Main St",
@@ -205,7 +204,7 @@ form.addEventListener('submit', (event) => {
         });
         setTimeout(() => {
             window.location.href = './../home/home.html';
-          }, "3000");
+          }, "2000");
        
 
     } else {
@@ -220,7 +219,7 @@ const Toast = Swal.mixin({
     toast: true,
     position: 'top',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 2000,
     timerProgressBar: true,
     didOpen: (toast) => {
         toast.onmouseenter = Swal.stopTimer;

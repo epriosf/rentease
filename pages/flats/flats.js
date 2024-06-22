@@ -1,18 +1,3 @@
-const newFlat = {
-
-  "name": "Flat 1",
-  "city": "New York",
-  "street_name": "3rd Blvd",
-  "street_number": 470,
-  "area_size": 1586,
-  "has_AC": true,
-  "year_built": 1955,
-  "rent_price": 2600,
-  "date_available": "2024-07-24",
-  "is_favourite": true,
-  "image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const flats = JSON.parse(getListFromLocalStorage('flats'));
   displayFlats(flats);
@@ -21,16 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 const displayFlats = flats => {
   const flatsContainer = document.getElementById('flats-container');
   flatsContainer.innerHTML = '';
-  flats.forEach(flat => {
-    flatsContainer.appendChild(createFlatRow(flat));
+  flats.forEach((flat, index) => {
+    flatsContainer.appendChild(createFlatRow(flat, index + 1));
   })
 }
-const createFlatRow = flat => {
-
+const createFlatRow = (flat, index) => {
   const flatItem = document.createElement('tr');
   flatItem.className = 'flat';
   flatItem.innerHTML = `
-      <td>${flat.id}</td>
+      <td>${index}</td>
       <td>${flat.name}</td>
       <td>${flat.city}</td>
       <td>${flat.street_name}</td>
@@ -90,15 +74,15 @@ const handleDelete = (flat_id, flat_name) => {
   });
 }
 
-const handleAdd = ()=>{
-    goToAddFlatPage('');
+const handleAdd = () => {
+  goToAddFlatPage('');
 }
 const handleEdit = async (flat_id) => {
   console.log("flat_id", flat_id);
   const flats = JSON.parse(getListFromLocalStorage('flats'));
+  
   const flat_found = flats.find(flat => flat.id === flat_id);
  // const flat_found = findItemByProperty(flats, 'id', flat_id);
-
   if (flat_found) {
     goToAddFlatPage(flat_found.id)
   }
@@ -108,5 +92,5 @@ const handleEdit = async (flat_id) => {
 
 }
 const goToAddFlatPage = (flat_id) => {
-    window.location.href = `./../addFlat/addFlat.html?flat_id=${flat_id}`;
+  window.location.href = `./../addFlat/addFlat.html?flat_id=${flat_id}`;
 }
