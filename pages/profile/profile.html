@@ -13,7 +13,6 @@
             <div class="logo-down-container">
                 <img src="./../../images/house-search.svg" alt="logo-image" />
             </div>
-           
         </div>
         <div class="form-container">
             <div class="container-login">
@@ -30,12 +29,19 @@
         <label for="username">Nombre de usuario:</label><br>
         <input type="text" id="username" name="username" required><br>
         <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" readonly><br>
         <label for="birthdate">Fecha de nacimiento:</label><br>
         <input type="date" id="birthdate" name="birthdate" required><br>
         <label for="password">Contraseña:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input id="userDetailsForm" type="button" value="Guardar">
+            <div class="password-container">
+                <input type="password" id="password" name="password" required> <br><br>
+                <i id="togglePassword" style="cursor: pointer;">👁️‍🗨️</i>
+            </div> <br><br>
+        <input id="userDetailsForm" type="button" value="Guardar"> <br>
+        <!-- En tu archivo HTML, agrega este div donde quieras que aparezca el mensaje -->
+        <div id="successMessage" class="success-message" style="display: none;">Guardado correctamente</div>
+    </br>
+    <a href="./../login/login.html">Ir a la página de inicio</a>
     </form>
     <div id="message"></div>
     <script src="profile.js"></script>

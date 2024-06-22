@@ -44,15 +44,15 @@ function renderFlats(flats, sortBy) {
             </div> 
         `;
 
-        // Agregamos un controlador de eventos al corazón
-        flatElement.querySelector('.heart').addEventListener('click', function (event) {
-            let heart = event.target;
-            let id = heart.dataset.id;
-            let flat = flats.find(flat => flat.id === id);
-            flat.is_favourite = !flat.is_favourite;
-            heart.classList.toggle('selected');
-            localStorage.setItem('flats', JSON.stringify(flats));
-        });
+// Agregamos un controlador de eventos al corazón
+flatElement.querySelector('.heart').addEventListener('click', function(event) {
+    let heart = event.target;
+    let id = heart.dataset.id;
+    let flat = flats.find(flat => flat.id === id);
+    flat.is_favourite = !flat.is_favourite;
+    heart.classList.toggle('selected');
+    localStorage.setItem('flats', JSON.stringify(flats));
+});
 
         flatsContainer.appendChild(flatElement);
     });

@@ -1,5 +1,5 @@
 // Agrega un evento de envío al formulario con id 'register'
-document.getElementById('register').addEventListener('submit', function(event) {
+document.getElementById('register').addEventListener('submit', function (event) {
     // Previene la acción por defecto del formulario (envío)
     event.preventDefault();
 
@@ -44,8 +44,8 @@ document.getElementById('register').addEventListener('submit', function(event) {
     // Si existen, muestra un mensaje de error
     if (exists) {
         document.getElementById('message').textContent = 'El usuario o correo electrónico ya existen.';
-    } 
-    // Si no existen, agrega el nuevo usuario al array y lo guarda en el almacenamiento local
+    }
+    // Si no existen, agrega el nuevo usuario y lo guarda en el almacenamiento local
     else {
         users.push({ name, lastname, username, email, birthdate, password });
         localStorage.setItem('users', JSON.stringify(users));
@@ -59,11 +59,11 @@ document.getElementById('register').addEventListener('submit', function(event) {
     document.getElementById('email').value = '';
     document.getElementById('birthdate').value = '';
     document.getElementById('password').value = '';
-    
+
 });
 
 // Cuando la página se carga, establece las fechas mínima y máxima para el campo de fecha de nacimiento
-window.onload = function(){
+window.onload = function () {
     // Obtiene la fecha actual
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -82,3 +82,13 @@ window.onload = function(){
     document.getElementById('birthdate').setAttribute('max', minDate);
     document.getElementById('birthdate').setAttribute('min', maxDate);
 }
+
+//Visor de contraseña
+document.getElementById('togglePassword').addEventListener('click', function () {
+    let password = document.getElementById('password');
+    if (password.type === 'password') {
+        password.type = 'text';
+    } else {
+        password.type = 'password';
+    }
+});
