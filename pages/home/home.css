@@ -1,6 +1,6 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
     padding: 20px;
     margin: 0 auto;
@@ -64,3 +64,68 @@
 .heart.selected {
     color: red; /* Color del corazón cuando está seleccionado */
 }
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+    margin:0 auto;
+    padding-top: 10px;
+}
+.search-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+    margin:0 auto;
+    padding-top: 10px;
+    color: black;
+}
+.search-container input,
+.button-filter {
+    margin: 20px 10px 0px 0px;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+}
+.search-container input  {
+    width: 30%;
+    border: 1px solid #7AA3DF;
+    color: black;
+
+}
+.button-filter {
+    width: 10%;
+    border: 1px solid #E88D67;
+    background-color: #E88D67;
+    color: white;
+    font-size: 20px;
+  }
+   .button-filter:hover {
+    background-color: #c27757;
+    cursor: pointer;
+  } 
+
+.button-sort {
+    margin-top: 20px;
+    width: 15%;
+    border: 1px solid #7AA3DF;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #7AA3DF;
+    color: white;
+    font-size: 20px;
+  }
+  .buttons-container button:hover {
+   cursor: pointer;
+  }
+  .active {
+    border: 1px solid #35878B;
+    background-color: #35878B;
+  }
+  .hide {
+    display: none;
+
+  }

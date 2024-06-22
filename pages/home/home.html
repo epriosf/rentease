@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta na me="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <div id="flats" class="grid"></div>
-    <!-- <div id="footer-placeholder"></div> -->
-    <script src="./home.js"></script>
-    <script>
-        fetch('./../../components/header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
+    </head>
 
-                const style = document.createElement('link');
-                      style.rel = 'stylesheet';
-                      style.href = './../../components/header/header.css';
-                      document.head.appendChild(style);
+    <body>
+        <div id="header-placeholder"></div>
+        <div class="search-container">
+            <input placeholder="Search by city" id="textSearch" type="search">
+            <button class="button-filter" onclick="filteringFlats()">Search</button>
+        </div>
+        <div class="buttons-container">
+            <button class="button-sort active" onclick="sortingFlats('All')">
+                <span>All</span>
+            </button>
+            <button class="button-sort" onclick="sortingFlats('Favourites')">
+                <span>Favourites</span> <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="button-sort" onclick="sortingFlats('City')">
+                <span>City</span> <i class="fa-solid fa-arrow-down-short-wide"></i>
+            </button>
+            <button class="button-sort" onclick="sortingFlats('Price')">
+                <span>Price</span> <i class="fa-solid fa-arrow-down-short-wide"></i>
+            </button>
+            <button class="button-sort" onclick="sortingFlats('Area Size')">
+                <span>Area Size</span> <i class="fa-solid fa-arrow-down-short-wide"></i>
+            </button>
+        </div>
+        <div id="flats" class="grid"></div>
+        <!-- <div id="footer-placeholder"></div> -->
+        <script src="./home.js"></script>
+        <script>
+            fetch('./../../components/header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
 
-                const script = document.createElement('script');
-                script.src = './../../components/header/header.js'; 
-                script.onload = () => {
-                    console.log('header.js script loaded');
-                    initializeHeader();
-                };
-                
-                document.body.appendChild(script);
-            })
-            .catch(error => {
-                console.error('Error fetching header:', error);
-            });
+                    const style = document.createElement('link');
+                    style.rel = 'stylesheet';
+                    style.href = './../../components/header/header.css';
+                    document.head.appendChild(style);
 
-       
+                    const script = document.createElement('script');
+                    script.src = './../../components/header/header.js';
+                    script.onload = () => {
+                        console.log('header.js script loaded');
+                        initializeHeader();
+                    };
+
+                    document.body.appendChild(script);
+                })
+                .catch(error => {
+                    console.error('Error fetching header:', error);
+                });
+
+
 
             // fetch('./../../components/footer/footer.html')
             // .then(response => response.text())
@@ -51,6 +73,7 @@
             // .catch(error => {
             //     console.error('Error fetching footer:', error);
             // });
-    </script>
-</body>
+        </script>
+    </body>
+
 </html>
