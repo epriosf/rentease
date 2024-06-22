@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
   }
+
   *, *:before, *:after {
     box-sizing: inherit;
   }
@@ -18,62 +19,73 @@ body {
     justify-content: center;
     overflow: hidden; /* Hide any overflow that might cause scrolling */
 }
+
 .container {
     display: flex;
     height: 100%;
     width: 100%;
 }
+
 .background {
     flex: 1;
     background: url('./../../images/login_bg.svg') no-repeat;
     background-size: cover; /* Cover the whole background area */
     background-position: center;
 }
+
 .background .logo-container {
     width: 80%;
     margin: 0 auto;
     padding-top: 10px;
 }
+
 .background .logo-down-container{
     position: relative;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .background .logo-down-container img{
     max-width: 75%;
 }
+
 .background .logo-container .img {
     max-width: 100%;
     height: auto;
     display: block;
 }
+
 .background span {
     color: white;
     font-family: 'Broadway', sans-serif;
 }
+
 .background .logo-r{
     font-size: 300px;
     width: 230px;
-
 }
+
 .background .logo-name{
     font-size: 100px;
 }
+
 .background .slogan {
     color: white;
     text-align: start;
 }
+
 .form-container {
     flex: 1;
 }
+
 .welcome-text {
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #404660;
-   
+    color: #404660; 
 }
+
 .roboto-bold {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -81,11 +93,13 @@ body {
     font-size: 30px;
     margin: 0 auto;
   }
+
  .container-login {
     width: 50%;
     margin: 0 auto;
     height: auto;
  }
+
 .form-profile{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -103,7 +117,7 @@ body {
     border: 3px solid #96C6DA;
     border-radius: 15px;
     font-size: 16px;
-    padding: 7px;
+    padding: 5px;
 }
 
 .form-profile input::placeholder {
@@ -129,21 +143,55 @@ body {
     color: white;
     font-size: 35px;
   }
+
 .form-profile span {
     display: block;
-   text-align: end;
-   color: #6F6C6C;
-   font-size: 25px;
-   font-style: italic;
-
+    text-align: end;
+    color: #6F6C6C;
+    font-size: 25px;
+    font-style: italic;
   }
+
   a {
     color: #96C6DA;
   }
+
   a:hover{
     color: #6F6C6C;
   }
+
   .sign-up {
     margin-top: 20px;
     text-align: center;
   }
+
+  .password-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ajusta esto al ancho deseado */
+    height: 40px; /* Ajusta esto a la altura deseada */
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Estilo para campos bloqueados (opcional) */
+input[readonly] {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.success-message {
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}

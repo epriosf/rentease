@@ -34,6 +34,37 @@ document.getElementById('userDetailsForm').addEventListener('click', function(e)
     let birthdate = document.getElementById('birthdate').value;
     let password = document.getElementById('password').value;
 
+    // Validar que name y lastname tengan al menos 2 caracteres
+    if (name.length < 2 || lastname.length < 2) {
+        alert('Los campos "Nombre" y "Apellido" deben tener al menos 2 caracteres.');
+        return; // Detener la ejecución si hay un error
+    }
+
+    // Calcular la edad
+    let today = new Date();
+    let birthDate = new Date(birthdate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    // Validar la edad
+    if (age < 18 || age > 120) {
+        alert('La edad debe estar en el rango de 18-120 años.');
+        return; // Detener la ejecución si hay un error
+    }
+
+    // Validar el password
+    if (password.length < 6) {
+        alert('El password debe tener al menos 6 caracteres.');
+        return; // Detener la ejecución si hay un error
+    }
+    if (!/[A-Za-z]/.test(password) || !/\d/.test(password) || !/[^A-Za-z\d]/.test(password)) {
+        alert('El password debe contener letras, números y al menos un carácter especial.');
+        return; // Detener la ejecución si hay un error
+    }
+    
     // Obtener el usuario actual del localStorage
     let users = JSON.parse(localStorage.getItem('users')) || [];
     let currentUser = null;
@@ -44,7 +75,7 @@ document.getElementById('userDetailsForm').addEventListener('click', function(e)
 
     // Verificar si el usuario existe
     if (currentUser) {
-        // Actualizar solo los datos que han cambiad
+        // Actualizar solo los datos que han cambiado
         currentUser.username = username ? username : currentUser.username;
         currentUser.email = email ? email : currentUser.email;
         currentUser.name = name ? name : currentUser.name;
@@ -52,6 +83,7 @@ document.getElementById('userDetailsForm').addEventListener('click', function(e)
         currentUser.birthdate = birthdate ? birthdate : currentUser.birthdate;
         currentUser.password = password ? password : currentUser.password;
 
+        // Guardar el usuario actualizado en localStorage
         localStorage.setItem('email', currentUser.email);
         localStorage.setItem('name', currentUser.name);
         localStorage.setItem('lastname', currentUser.lastname);
@@ -66,10 +98,35 @@ document.getElementById('userDetailsForm').addEventListener('click', function(e)
         // Guardar los datos actualizados en el localStorage
         localStorage.setItem('users', JSON.stringify(users));
 
-        // Redirigir al usuario a home.html
-        window.location.href = "./../home/home.html";
+    // Crear y mostrar un mensaje de éxito sin usar alert
+    const successMessage = document.createElement("div");
+    successMessage.textContent = "Guardado correctamente";
+    successMessage.className = "success-message"; // Usar la clase definida en CSS
+    document.body.appendChild(successMessage);
+
+    // Opcionalmente, eliminar el mensaje después de unos segundos
+    setTimeout(() => {
+    document.body.removeChild(successMessage);
+    }, 3000);
+
+        } else {
+            // Si el usuario no existe, mostrar un mensaje de error
+            alert('Usuario no encontrado');
+        }
+    });
+
+//Visor de contraseña
+    document.getElementById('togglePassword').addEventListener('click', function () {
+    let password = document.getElementById('password');
+    if (password.type === 'password') {
+        password.type = 'text';
     } else {
-        // Si el usuario no existe, mostrar un mensaje de error
-        alert('Usuario no encontrado');
+        password.type = 'password';
     }
-})
+});
+
+
+// Bloquear el campo de correo electrónico para edición
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('email').readOnly = true; // Asegura que el campo de correo esté bloqueado
+});

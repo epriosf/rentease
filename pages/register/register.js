@@ -82,6 +82,7 @@ window.onload = function () {
     document.getElementById('birthdate').setAttribute('max', minDate);
     document.getElementById('birthdate').setAttribute('min', maxDate);
 }
+
 //Visor de contraseña
 document.getElementById('togglePassword').addEventListener('click', function () {
     let password = document.getElementById('password');
