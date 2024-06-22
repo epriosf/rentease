@@ -184,6 +184,15 @@ form.addEventListener('submit', (event) => {
     const users = JSON.parse(localStorage.getItem('users'));
     const validUser = users.find(user => user.email === email && user.password === password)
     if (validUser) {
+         // Si el usuario es válido, guarda su email, nombre, apellido, fecha de nacimiento y contraseña en localStorage
+         localStorage.setItem('email', validUser.email);
+         localStorage.setItem('name', validUser.name);
+         localStorage.setItem('lastname', validUser.lastname);
+         localStorage.setItem('birthdate', validUser.birthdate);
+         localStorage.setItem('password', validUser.password);
+         localStorage.setItem('username', validUser.username);
+         localStorage.setItem('isLoggedIn', 'true');
+
         addListToLocalStorage('flats', JSON.stringify(flats));
         validUser.expiryTime = new Date(new Date().getTime() + 60 * 60*1000).toISOString();
         validUser.isLoggedIn = true;

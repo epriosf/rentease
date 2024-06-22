@@ -78,10 +78,16 @@ const handleAdd = () => {
   goToAddFlatPage('');
 }
 const handleEdit = async (flat_id) => {
+  console.log("flat_id", flat_id);
   const flats = JSON.parse(getListFromLocalStorage('flats'));
-  const flat_found = findItemByProperty(flats, 'id', flat_id);
+  
+  const flat_found = flats.find(flat => flat.id === flat_id);
+ // const flat_found = findItemByProperty(flats, 'id', flat_id);
   if (flat_found) {
     goToAddFlatPage(flat_found.id)
+  }
+  else {
+    console.log("flat_not_found")
   }
 
 }
