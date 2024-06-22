@@ -11,7 +11,7 @@
     <body>
         <div id="header-placeholder"></div>
         <div class="search-container">
-            <input placeholder="Search by city" id="textSearch" type="search">
+            <input placeholder="Search by city, price or area size" id="textSearch" type="search" maxlength="20">
             <button class="button-filter" onclick="filteringFlats()">Search</button>
         </div>
         <div class="buttons-container">
@@ -32,6 +32,7 @@
             </button>
         </div>
         <div id="flats" class="grid"></div>
+        <div id="noFlatsFound" class="no-flats-container"></div>
         <!-- <div id="footer-placeholder"></div> -->
         <script src="./home.js"></script>
         <script>

@@ -195,3 +195,147 @@ input[readonly] {
     border-radius: 5px;
     z-index: 1000;
 }
+
+@media (min-width: 1550px) and (max-width: 1800px) {
+
+    .welcome-text {
+      margin-bottom: 40px;
+    }
+  
+    .roboto-bold {
+      font-size: 75px;
+    }
+  
+  }
+  
+  @media (min-width: 1420px) and (max-width: 1549px) {
+    .background .logo-container img {
+      max-width: 90%;
+    }
+  
+    .welcome-text {
+      margin-top: 25px;
+    }
+  
+    .roboto-bold {
+      font-size: 30px;
+    }
+  
+    .background .logo-down-container img {
+      max-width: 80%;
+    }
+  }
+  
+  @media (min-width: 1280px) and (max-width: 1419px) {
+    .background .logo-container img {
+      max-width: 80%;
+    }
+  
+    .welcome-text {
+      margin-top: 25px;
+    }
+  
+    .roboto-bold {
+      font-size: 60px;
+    }
+  
+    .background .logo-down-container img {
+      max-width: 70%;
+    }
+  
+  }
+  
+  @media (min-width: 959px) and (max-width: 1279px) {
+  
+    .background {
+      display: none;
+    }
+  
+    .logo-container-mobile,
+    .logo-down-container-mobile {
+      display: block;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  
+    .logo-container-mobile img,
+    .logo-down-container-mobile img {
+      max-width: 50%;
+    }
+  
+    .welcome-text {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  
+    }
+  
+    .roboto-bold {
+      font-size: 30px;
+    }
+  
+  }
+  
+  @media (min-width: 481px) and (max-width: 958px) {
+    .background {
+      display: none;
+    }
+  
+    .logo-container-mobile,
+    .logo-down-container-mobile {
+      display: block;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  
+    .logo-container-mobile img,
+    .logo-down-container-mobile img {
+      max-width: 70%;
+    }
+  
+    .welcome-text {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  
+    }
+  
+    .roboto-bold {
+      font-size: 28px;
+  
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .background {
+      display: none;
+    }
+  
+    .logo-container-mobile,
+    .logo-down-container-mobile {
+      display: block;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  
+    .logo-container-mobile img {
+      max-width: 100%;
+    }
+  
+    .logo-down-container-mobile img {
+      max-width: 100%;
+    }
+  
+    .welcome-text {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  
+    }
+  
+    .roboto-bold,
+    .form-profile input,
+    .form-profile label,
+    .sign-up,
+    .form-profile button {
+      font-size: 25px;
+    }
+  }

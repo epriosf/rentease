@@ -2,6 +2,7 @@
 let flatsFromLocalStorage = JSON.parse(localStorage.getItem('flats')) || [];
 
 let flatsContainer = document.getElementById('flats');
+let flatsNotFoundContainer = document.getElementById('noFlatsFound');
 
 const activeButton = (sortBy) => {
     let buttons = document.querySelectorAll(".buttons-container button");
@@ -20,7 +21,10 @@ function renderFlats(flats, sortBy) {
     activeButton(sortBy);
     // Limpiamos el contenedor de flats
     flatsContainer.innerHTML = '';
-    // Iteramos sobre cada flat
+    flatsNotFoundContainer.innerHTML = '';
+    if (flats.length > 0){
+
+         // Iteramos sobre cada flat
     flats.forEach(flat => {
         let flatElement = document.createElement('div');
         flatElement.className = 'flat ';
@@ -56,6 +60,11 @@ flatElement.querySelector('.heart').addEventListener('click', function(event) {
 
         flatsContainer.appendChild(flatElement);
     });
+
+    }
+    else {
+        flatsNotFoundContainer.innerHTML = '<h1>No flats found</h1>';
+    }
 }
 const sortingFlats = (sortBy) => {
     activeButton(sortBy);
@@ -85,10 +94,16 @@ const sortingFlats = (sortBy) => {
     }
 }
 const filteringFlats = ()=>{
-    var inputElement = document.getElementById("textSearch");
-    var searchValue = inputElement.value;
-    const filteredFlats = flatsFromLocalStorage.filter(flat=> flat.city== searchValue);
-    renderFlats(filteredFlats, "All");
+    const inputElement = document.getElementById("textSearch");
+    const searchValue = inputElement.value;
+    const numberSearchValue = parseInt(searchValue);
+    const filteredFlats = flatsFromLocalStorage.filter(flat=> {
+        const matchesCity = flat.city.toLowerCase().includes(searchValue.toLowerCase());
+        const matchesRentPrice = !isNaN(numberSearchValue) && flat.rent_price <= numberSearchValue;
+        const matchesAreaSize = !isNaN(numberSearchValue) && flat.area_size <= numberSearchValue;
+        return matchesCity || matchesRentPrice || matchesAreaSize
+    });
+        renderFlats(filteredFlats, 'All');
 }
 
 // Llamamos a la función para renderizar los flats
@@ -102,5 +117,15 @@ window.addEventListener('storage', function (e) {
         renderFlats();
     }
 });
+
+document.getElementById('textSearch').addEventListener('input', handleInputChange);
+
+function handleInputChange() {
+    console.log("Inpt");
+    const searchInput = document.getElementById('textSearch').value.toLowerCase();
+    if (!searchInput) {
+        renderFlats(flatsFromLocalStorage, 'All');
+    }
+}
 
 

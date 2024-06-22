@@ -73,7 +73,7 @@
     margin:0 auto;
     padding-top: 10px;
 }
-.search-container{
+.search-container, .no-flats-container{
     display: flex;
     justify-content: flex-start;
     align-items: center;
